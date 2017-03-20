@@ -1,5 +1,5 @@
 
-void asmSwap(int* a, int* b) {
+void inline asmSwap(int* a, int* b) {
   asm volatile (".intel_syntax noprefix\n\t"
                 "mov eax, %2\n\t"
                 "mov %0, %3\n\t"
