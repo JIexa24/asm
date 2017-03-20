@@ -8,12 +8,12 @@ int asmIntCmp(int a, int b) {
                 "jl low\n\t"
                 "mov %0, 0\n\t"
                 "jmp end \n"
-                "big:\n\t"
+              "big:\n\t"
                 "mov %0, 1\n\t"
                 "jmp end \n"
-                "low:\n\t"
+              "low:\n\t"
                 "mov %0, -1\n"
-                "end:\n"
+              "end:\n"
                 : "=m"(ret)
                 : "a" (a), "d"(b)
                 : 
