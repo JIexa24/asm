@@ -1,5 +1,5 @@
 
-int inline asmIntCmp(int a, int b) {
+int asmIntCmp(int a, int b) {
   int ret = -2;
 
   asm volatile (".intel_syntax noprefix\n\t"
