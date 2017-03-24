@@ -16,7 +16,7 @@ int asmIntCmp(int a, int b) {
               "end:\n"
                 : "=m"(ret)
                 : "a" (a), "d"(b)
-                : 
+                :
                );
   return ret;
 }
