@@ -1,10 +1,11 @@
+#include "./../include/asmInline.h"
 
-void asmSwap(int* a, int* b) {
+void asmSwapInt(int* a, int* b) {
   asm volatile (
                 ".intel_syntax noprefix\n\t"
                 "mov %0, ebx\n\t"
                 "mov %1, eax\n\t"
-  /* AT&T synatax 
+  /* AT&T synatax
                 "mov %%eax, %1\n\t"
                 "mov %%ebx, %0\n\t"
    */

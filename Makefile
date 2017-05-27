@@ -5,14 +5,14 @@ all: asm
 
 asm: ./lib/libAsmInline.a
 
-./lib/libAsmInline.a: ./obj/asmSwap.o ./obj/asmIntCmp.o
-	ar rvs ./lib/asmInline.a ./obj/asmSwap.o ./obj/asmIntCmp.o
+./lib/libAsmInline.a: ./obj/asmSwap.o ./obj/asmCmp.o
+	ar rvs ./lib/asmInline.a ./obj/asmSwap.o ./obj/asmCmp.o
 
 ./obj/asmSwap.o: ./src/asmSwap.c
 	$(CC) -c ./src/asmSwap.c -o ./obj/asmSwap.o $(CFLAGS)
 
-./obj/asmIntCmp.o: ./src/asmIntCmp.c
-	$(CC) -c ./src/asmIntCmp.c -o ./obj/asmIntCmp.o $(CFLAGS)
+./obj/asmCmp.o: ./src/asmCmp.c
+	$(CC) -c ./src/asmCmp.c -o ./obj/asmCmp.o $(CFLAGS)
 
 clean:
 	rm ./obj/*.o
