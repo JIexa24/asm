@@ -1,2 +1,4 @@
 /lib/*.a
 /obj/*.o
+/bin/asm
+/build/*

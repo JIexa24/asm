@@ -1,7 +1,8 @@
 CC = gcc
-CFLAGS = -g3 -masm=intel -O0
+CFLAGS = -g3 -O0
 
-all: asm
+all:
+	make -C build
 
 asm: ./lib/libAsmInline.a
 
