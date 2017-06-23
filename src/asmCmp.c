@@ -37,7 +37,7 @@ int asmCmplf(double a, double b) {
   return ret;
 }
 /*---------------------------------------------------------------------------*/
-int asmCmpi(int a, int b) {
+int asmCmpi(int32_t a, int32_t b) {
   int ret = -2;
   asm volatile (
   /*AT&T syntax*/
@@ -82,11 +82,11 @@ int asmCmpf(float a, float b) {
   return ret;
 }
 /*---------------------------------------------------------------------------*/
-int asmCmpl(long int a, long int b) {
+int asmCmpl(int64_t a, int64_t b) {
   int ret = -2;
   asm volatile (
   /*AT&T syntax*/
-              "cmp %%edx, %%eax\n\t"
+              "cmp %%rdx, %%rax\n\t"
               "jg bigl\n\t"
               "jl lowl\n\t"
               "movl $0, %0\n\t"

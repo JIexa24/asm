@@ -3,5 +3,6 @@
 
 #include "asmSwap.h"
 #include "asmCmp.h"
+#include "asmStrlen.h"
 
 #endif
