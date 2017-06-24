@@ -3,6 +3,6 @@ project(Asm)
 
 include_directories(include)
 
-set(SOURCE_LIB src/asmCmp.c src/asmSwap.c)
+set(SOURCE_LIB src/asmCmp.c src/asmSwap.c src/asmFactorial.c)
 
 add_library(AsmInline STATIC ${SOURCE_LIB})

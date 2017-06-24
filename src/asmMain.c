@@ -9,6 +9,10 @@ int main(int argc, char** argv)
   printf("%d %d\n", a, b);
   printf("%d %d %d\n",
          asmCmp(10,9),
-         asmCmp(10.0, 10),
+         asmCmp((float)10.0, 10),
          asmCmp(9,10));
+
+  printf("%d\n",
+  asmFactorial(5));
+  return 0;
 }
