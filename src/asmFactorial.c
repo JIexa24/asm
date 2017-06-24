@@ -13,7 +13,7 @@ int64_t asmFactorial(int64_t num) {
                 "jmp begfact%=\n"
               "endfact%=:\n\t"
                 "movq %%rax, %0\n"
-                : "=m" (ret)
+                : "=a" (ret)
                 : "b" (num)
                 :
                );

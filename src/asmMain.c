@@ -12,7 +12,7 @@ int main(int argc, char** argv)
          asmCmp((float)10.0, 10),
          asmCmp(9,10));
 
-  printf("%d\n",
+  printf("%ld\n",
   asmFactorial(5));
   return 0;
 }
