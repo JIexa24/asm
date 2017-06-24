@@ -42,8 +42,8 @@ void asmSwapf(float* a, float* b) {
 void asmSwapl(int64_t* a, int64_t* b) {
   asm volatile (
   /*AT&T syntax*/
-                "movq %%eax, %1\n\t"
-                "movq %%ebx, %0\n\t"
+                "movq %%rax, %1\n\t"
+                "movq %%rbx, %0\n\t"
                 : "=m" (*a), "=m"(*b)
                 : "b" (*b), "a"(*a)
                 :
