@@ -3,13 +3,13 @@
 void asmSwaplf(double* a, double* b) {
   asm volatile (
   /*AT&T syntax*/
-                "movl %%eax, %1\n\t"
-                "movl %%ebx, %0\n\t"
+                "movq %%rax, %1\n\t"
+                "movq %%rbx, %0\n\t"
   /*intel syntax*/
   /*
                 ".intel_syntax noprefix\n\t"
-                "mov %0, ebx\n\t"
-                "mov %1, eax\n\t"
+                "mov %0, rbx\n\t"
+                "mov %1, rax\n\t"
   */
                 : "=m" (*a), "=m"(*b)
                 : "b" (*b), "a"(*a)
@@ -17,7 +17,7 @@ void asmSwaplf(double* a, double* b) {
                );
 }
 /*---------------------------------------------------------------------------*/
-void asmSwapi(int* a, int* b) {
+void asmSwapi(int32_t* a, int32_t* b) {
   asm volatile (
   /*AT&T syntax*/
                 "movl %%eax, %1\n\t"
@@ -39,11 +39,11 @@ void asmSwapf(float* a, float* b) {
                );
 }
 /*---------------------------------------------------------------------------*/
-void asmSwapl(long int* a, long int* b) {
+void asmSwapl(int64_t* a, int64_t* b) {
   asm volatile (
   /*AT&T syntax*/
-                "movl %%eax, %1\n\t"
-                "movl %%ebx, %0\n\t"
+                "movq %%eax, %1\n\t"
+                "movq %%ebx, %0\n\t"
                 : "=m" (*a), "=m"(*b)
                 : "b" (*b), "a"(*a)
                 :

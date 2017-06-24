@@ -19,16 +19,16 @@ int asmCmplf(double a, double b) {
               "end:\n"
   */
   /*AT&T syntax*/
-              "cmp %%edx, %%eax\n\t"
+              "cmp %%rdx, %%rax\n\t"
               "jg biglf\n\t"
               "jl lowlf\n\t"
-              "movl $0, %0\n\t"
+              "movq $0, %0\n\t"
               "jmp endlf \n"
             "biglf:\n\t"
-              "movl $1, %0\n\t"
+              "movq $1, %0\n\t"
               "jmp endlf \n"
             "lowlf:\n\t"
-              "movl $(-1), %0\n"
+              "movq $(-1), %0\n"
             "endlf:\n"
               : "=m"(ret)
               : "a" (a), "d"(b)
@@ -89,13 +89,13 @@ int asmCmpl(int64_t a, int64_t b) {
               "cmp %%rdx, %%rax\n\t"
               "jg bigl\n\t"
               "jl lowl\n\t"
-              "movl $0, %0\n\t"
+              "movq $0, %0\n\t"
               "jmp endl \n"
             "bigl:\n\t"
-              "movl $1, %0\n\t"
+              "movq $1, %0\n\t"
               "jmp endl \n"
             "lowl:\n\t"
-              "movl $(-1), %0\n"
+              "movq $(-1), %0\n"
             "endl:\n"
               : "=m"(ret)
               : "a" (a), "d"(b)
