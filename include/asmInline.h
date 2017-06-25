@@ -5,6 +5,7 @@
 #include "asmCmp.h"
 #include "asmStrlen.h"
 #include "asmFactorial.h"
+#include "asmPow.h"
 
 #define mem_barrier() asm volatile ("":::"memory")
 

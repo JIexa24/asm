@@ -6,7 +6,7 @@ int64_t asmFactorial(int64_t num) {
   /*AT&T syntax*/
                 "movq $1, %%rax\n"
                 "cmp $0, %%rbx\n\t"
-                "jl begfact%=\n"
+                "jl lowfact%=\n"
               "begfact%=:\n\t"
                 "cmpq $0, %%rbx\n\t"
                 "je endfact%=\n\t"
