@@ -19,7 +19,7 @@ int64_t asmFactorial(int64_t num) {
                 "movq %%rax, %0\n"
                 : "=a" (ret)
                 : "b" (num)
-                :
+                : "memory"
                );
   return ret;
 }

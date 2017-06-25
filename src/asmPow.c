@@ -20,7 +20,7 @@ double asmPowlf(double num, int32_t radix){
                 "movq %%rax, %0\n"
                 : "=a" (ret)
                 : "b" (num), "c" (radix)
-                :
+                : "memory"
                );
   return ret;
 }
@@ -45,7 +45,7 @@ int32_t asmPowi(int32_t num, int32_t radix){
                 "movl %%eax, %0\n"
                 : "=a" (ret)
                 : "b" (num), "c" (radix)
-                :
+                : "memory"
                );
   return ret;
 }
@@ -70,7 +70,7 @@ float asmPowf(float num, int32_t radix){
                 "movl %%eax, %0\n"
                 : "=a" (ret)
                 : "b" (num), "c" (radix)
-                :
+                : "memory"
                );
   return ret;
 }
@@ -95,7 +95,7 @@ int64_t asmPowl(int64_t num, int32_t radix){
                 "movq %%rax, %0\n"
                 : "=a" (ret)
                 : "b" (num), "c" (radix)
-                :
+                : "memory"
                );
   return ret;
 }

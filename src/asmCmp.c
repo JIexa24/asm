@@ -32,7 +32,7 @@ int asmCmplf(double a, double b) {
             "endlf%=:\n"
               : "=m"(ret)
               : "a" (a), "d"(b)
-              :
+              : "memory"
              );
   return ret;
 }
@@ -54,7 +54,7 @@ int asmCmpi(int32_t a, int32_t b) {
             "endi%=:\n"
               : "=m"(ret)
               : "a" (a), "d"(b)
-              :
+              : "memory"
              );
   return ret;
 }
@@ -77,7 +77,7 @@ int asmCmpf(float a, float b) {
             "endf%=:\n"
               : "=m"(ret)
               : "a" (a), "d"(b)
-              :
+              : "memory"
              );
   return ret;
 }
@@ -99,7 +99,7 @@ int asmCmpl(int64_t a, int64_t b) {
             "endl%=:\n"
               : "=m"(ret)
               : "a" (a), "d"(b)
-              :
+              : "memory"
              );
   return ret;
 }
