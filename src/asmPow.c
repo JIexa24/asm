@@ -4,7 +4,7 @@ double asmPowlf(double num, int32_t radix){
   double ret = -1;
   asm volatile (
   /*AT&T syntax*/
-                "movq $1, %%rax\n"
+                "movq $1, %%rax\n\t"
                 "cmp $0, %%ecx\n\t"
                 "jl lowpow%=\n\t"
                 "je endpow%=\n"
@@ -18,7 +18,7 @@ double asmPowlf(double num, int32_t radix){
                 "movq $0, %%rax\n"
               "endpow%=:\n\t"
                 "movq %%rax, %0\n"
-                : "=a" (ret)
+                : "=m" (ret)
                 : "b" (num), "c" (radix)
                 : "memory"
                );
@@ -29,7 +29,7 @@ int32_t asmPowi(int32_t num, int32_t radix){
   int32_t ret = -1;
   asm volatile (
   /*AT&T syntax*/
-                "movl $1, %%eax\n"
+                "movl $1, %%eax\n\t"
                 "cmp $0, %%ecx\n\t"
                 "jl lowpow%=\n\t"
                 "je endpow%=\n"
@@ -54,7 +54,7 @@ float asmPowf(float num, int32_t radix){
   float ret = -1;
   asm volatile (
   /*AT&T syntax*/
-                "movl $1, %%eax\n"
+                "movl $1, %%eax\n\t"
                 "cmp $0, %%ecx\n\t"
                 "jl lowpow%=\n\t"
                 "je endpow%=\n"
@@ -79,7 +79,7 @@ int64_t asmPowl(int64_t num, int32_t radix){
   int64_t ret = -1;
   asm volatile (
   /*AT&T syntax*/
-                "movq $1, %%rax\n"
+                "movq $1, %%rax\n\t"
                 "cmp $0, %%ecx\n\t"
                 "jl lowpow%=\n\t"
                 "je endpow%=\n"

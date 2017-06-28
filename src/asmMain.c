@@ -1,12 +1,12 @@
 #include <stdio.h>
 #include "../include/asmInline.h"
-
+#include <omp.h>
 int main(int argc, char** argv)
 {
-  int a = 10;
-  int b = 20;
-  asmSwapi(&a, &b);
-  printf("swap - (20 10) - %d %d\n", a, b);
+  float a = 10.6;
+  float b = 20.5;
+  asmSwap(&a, &b);
+  printf("swap - (20.5 10.6) - %f %f\n", a, b);
   printf("cmp - (-1 0 1) -%d %d %d\n",
          asmCmp(10,9),
          asmCmp((float)10.0, 10),
@@ -17,7 +17,14 @@ int main(int argc, char** argv)
   asmFactorial(0),
   asmFactorial(-2));
 
-  printf("pow - (16 100 2.25 1 0) - %ld %ld %lf %ld %ld \n",
-  asmPow(2,4), asmPow(100,1), asmPow(1.5, 2),asmPow(5,0), asmPow(1, -5));
+  printf("pow - (16 100 4 1 0) - %d %d %d %d %d \n",
+  asmPow(2,4), asmPow(100,1), asmPow(2, 2),asmPow(5,0), asmPow(1, -5));
+
+  int a1, b1,c;
+  asmAtomicAdd(&a1,2,3);
+  asmAtomicAdd(&b1,6,4);
+  asmAtomicAdd(&c,0,3);
+  mem_barrier();
+  printf("add - (5 10 3) - %d %d %d\n", a1,b1,c);
   return 0;
 }

@@ -6,8 +6,8 @@ all:
 
 asm: ./lib/libAsmInline.a
 
-./lib/libAsmInline.a: ./obj/asmSwap.o ./obj/asmCmp.o ./obj/asmFactorial.o ./obj/asmPow.o
-	ar rvs ./lib/libAsmInline.a ./obj/asmSwap.o ./obj/asmCmp.o ./obj/asmFactorial.o ./obj/asmPow.o
+./lib/libAsmInline.a: ./obj/asmSwap.o ./obj/asmCmp.o ./obj/asmFactorial.o ./obj/asmPow.o ./obj/asmAtomic.o
+	ar rvs ./lib/libAsmInline.a ./obj/asmSwap.o ./obj/asmCmp.o ./obj/asmFactorial.o ./obj/asmPow.o ./obj/asmAtomic.o
 
 ./obj/asmSwap.o: ./src/asmSwap.c
 	$(CC) -c ./src/asmSwap.c -o ./obj/asmSwap.o $(CFLAGS)
@@ -20,6 +20,9 @@ asm: ./lib/libAsmInline.a
 
 ./obj/asmPow.o: ./src/asmPow.c
 	$(CC) -c ./src/asmPow.c -o ./obj/asmPow.o $(CFLAGS)
+
+./obj/asmAtomic.o: ./src/asmAtomic.c
+	$(CC) -c ./src/asmAtomic.c -o ./obj/asmAtomic.o $(CFLAGS)
 
 clean:
 	rm ./obj/*.o
