@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "../include/asmInline.h"
-#include <omp.h>
+#include <string.h>
 int main(int argc, char** argv)
 {
   float a = 10.6;
@@ -24,7 +24,10 @@ int main(int argc, char** argv)
   asmAtomicAdd(&a1,2,3);
   asmAtomicAdd(&b1,6,4);
   asmAtomicAdd(&c,0,3);
-  mem_barrier();
+
   printf("add - (5 10 3) - %d %d %d\n", a1,b1,c);
+  int len = 16;
+  char locptr[17] = "HelloAssembler!\n";
+  asmPrintStr(locptr, 16);
   return 0;
 }

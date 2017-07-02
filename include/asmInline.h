@@ -7,6 +7,7 @@
 #include "asmFactorial.h"
 #include "asmPow.h"
 #include "asmAtomic.h"
+#include "asmPrintStr.h"
 
 #define mem_barrier() asm volatile ("":::"memory")
 
