@@ -2,3 +2,5 @@
 /obj/*.o
 /bin/asm
 /build/*
+/*.i
+/*.o

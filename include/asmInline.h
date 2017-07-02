@@ -10,5 +10,6 @@
 #include "asmPrintStr.h"
 
 #define mem_barrier() asm volatile ("":::"memory")
+#define emptyAsm() asm volatile ("\n\t":::)
 
 #endif
