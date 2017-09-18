@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -g3 -O0 --save-temps
+CFLAGS = -g3 -O0 
 
 all:
 	make -C build
