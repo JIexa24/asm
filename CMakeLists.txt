@@ -6,6 +6,3 @@ include_directories(include)
 set(SOURCE_LIB src/asmCmp.c src/asmSwap.c src/asmFactorial.c src/asmPow.c src/asmAtomic.c)
 
 add_library(AsmInline STATIC ${SOURCE_LIB})
-
-add_executable(../bin/asm src/asmMain.c)
-target_link_libraries(../bin/asm AsmInline)
