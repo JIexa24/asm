@@ -9,8 +9,8 @@ int64_t asmFactorial(int64_t num) {
   int64_t ret = -1;
   asm volatile (
   /*AT&T syntax*/
-                "movq %0, %%rbx\n"
-                "movq %1, %%rax\n"
+                "movq %1, %%rbx\n"
+//                "movq %1, %%rax\n"
                 "movq $1, %%rax\n"
                 "cmp $0, %%rbx\n\t"
                 "jl lowfact%=\n"
