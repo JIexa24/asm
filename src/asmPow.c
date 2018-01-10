@@ -5,14 +5,14 @@ double asmPowlf(double num, int32_t radix){
   asm volatile (
   /*AT&T syntax*/
                 "movq $1, %%rax\n\t"
-                "cmp $0, %%ecx\n\t"
+                "cmpq $0, %%rcx\n\t"
                 "jl lowpow%=\n\t"
                 "je endpow%=\n"
               "begpow%=:\n\t"
-                "cmpl $0, %%ecx\n\t"
+                "cmpq $0, %%rcx\n\t"
                 "je endpow%=\n\t"
-                "mull %%ebx\n\t"
-                "decl %%ecx\n\t"
+                "mulq %%rbx\n\t"
+                "decq %%rcx\n\t"
                 "jmp begpow%=\n"
               "lowpow%=:\n\t"
                 "movq $0, %%rax\n"
@@ -30,7 +30,7 @@ int32_t asmPowi(int32_t num, int32_t radix){
   asm volatile (
   /*AT&T syntax*/
                 "movl $1, %%eax\n\t"
-                "cmp $0, %%ecx\n\t"
+                "cmpl $0, %%ecx\n\t"
                 "jl lowpow%=\n\t"
                 "je endpow%=\n"
               "begpow%=:\n\t"
@@ -55,7 +55,7 @@ float asmPowf(float num, int32_t radix){
   asm volatile (
   /*AT&T syntax*/
                 "movl $1, %%eax\n\t"
-                "cmp $0, %%ecx\n\t"
+                "cmpl $0, %%ecx\n\t"
                 "jl lowpow%=\n\t"
                 "je endpow%=\n"
               "begpow%=:\n\t"
@@ -80,14 +80,14 @@ int64_t asmPowl(int64_t num, int32_t radix){
   asm volatile (
   /*AT&T syntax*/
                 "movq $1, %%rax\n\t"
-                "cmp $0, %%ecx\n\t"
+                "cmpq $0, %%rcx\n\t"
                 "jl lowpow%=\n\t"
                 "je endpow%=\n"
               "begpow%=:\n\t"
-                "cmpl $0, %%ecx\n\t"
+                "cmpq $0, %%rcx\n\t"
                 "je endpow%=\n\t"
-                "mull %%ebx\n\t"
-                "decl %%ecx\n\t"
+                "mulq %%rbx\n\t"
+                "decq %%rcx\n\t"
                 "jmp begpow%=\n"
               "lowpow%=:\n\t"
                 "movq $0, %%rax\n"
