@@ -12,7 +12,7 @@ int64_t asmFactorial(int64_t num) {
                 "movq %1, %%rbx\n"
 //                "movq %1, %%rax\n"
                 "movq $1, %%rax\n"
-                "cmp $0, %%rbx\n\t"
+                "cmpq $0, %%rbx\n\t"
                 "jl lowfact%=\n"
               "begfact%=:\n\t"
                 "cmpq $0, %%rbx\n\t"
