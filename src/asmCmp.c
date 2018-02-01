@@ -20,16 +20,16 @@ int asmCmplf(double a, double b) {
   */
   /*AT&T syntax*/
               "cmpq %%rdx, %%rax\n\t"
-              "jg biglf%=\n\t"
-              "jl lowlf%=\n\t"
+              "jg big%=\n\t"
+              "jl low%=\n\t"
               "movq $0, %0\n\t"
-              "jmp endlf%=\n"
-            "biglf%=:\n\t"
+              "jmp end%=\n"
+            "big%=:\n\t"
               "movq $1, %0\n\t"
-              "jmp endlf%=\n"
-            "lowlf%=:\n\t"
+              "jmp end%=\n"
+            "low%=:\n\t"
               "movq $(-1), %0\n"
-            "endlf%=:\n"
+            "end%=:\n"
               : "=m"(ret)
               : "a" (a), "d"(b)
               : "memory"
@@ -42,16 +42,16 @@ int asmCmpi(int32_t a, int32_t b) {
   asm volatile (
   /*AT&T syntax*/
               "cmpl %%edx, %%eax\n\t"
-              "jg bigi%=\n\t"
-              "jl lowi%=\n\t"
+              "jg big%=\n\t"
+              "jl low%=\n\t"
               "movl $0, %0\n\t"
-              "jmp endi%=\n"
-            "bigi%=:\n\t"
+              "jmp end%=\n"
+            "big%=:\n\t"
               "movl $1, %0\n\t"
-              "jmp endi%=\n"
-            "lowi%=:\n\t"
+              "jmp end%=\n"
+            "low%=:\n\t"
               "movl $(-1), %0\n"
-            "endi%=:\n"
+            "end%=:\n"
               : "=m"(ret)
               : "a" (a), "d"(b)
               : "memory"
@@ -65,16 +65,16 @@ int asmCmpf(float a, float b) {
   asm volatile (
   /*AT&T syntax*/
               "cmpl %%edx, %%eax\n\t"
-              "jg bigf%=\n\t"
-              "jl lowf%=\n\t"
+              "jg big%=\n\t"
+              "jl low%=\n\t"
               "movl $0, %0\n\t"
-              "jmp endf%=\n"
-            "bigf%=:\n\t"
+              "jmp end%=\n"
+            "big%=:\n\t"
               "movl $1, %0\n\t"
-              "jmp endf%=\n"
-            "lowf%=:\n\t"
+              "jmp end%=\n"
+            "low%=:\n\t"
               "movl $(-1), %0\n"
-            "endf%=:\n"
+            "end%=:\n"
               : "=m"(ret)
               : "a" (a), "d"(b)
               : "memory"
@@ -87,16 +87,16 @@ int asmCmpl(int64_t a, int64_t b) {
   asm volatile (
   /*AT&T syntax*/
               "cmpq %%rdx, %%rax\n\t"
-              "jg bigl%=\n\t"
-              "jl lowl%=\n\t"
+              "jg big%=\n\t"
+              "jl low%=\n\t"
               "movq $0, %0\n\t"
-              "jmp endl%=\n"
-            "bigl%=:\n\t"
+              "jmp end%=\n"
+            "big%=:\n\t"
               "movq $1, %0\n\t"
-              "jmp endl%=\n"
-            "lowl%=:\n\t"
+              "jmp end%=\n"
+            "low%=:\n\t"
               "movq $(-1), %0\n"
-            "endl%=:\n"
+            "end%=:\n"
               : "=m"(ret)
               : "a" (a), "d"(b)
               : "memory"
