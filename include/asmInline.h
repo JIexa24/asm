@@ -40,7 +40,7 @@ void asmAtomicAdd(int* result, int num_one, int num_two);
       :                              \
       :"S"(STR), "d"(LEN)            \
       :"%eax", "%ebx"                \
-  );
+  )
 
 #define asmPrintStrPrintfNoPar(STR)  \
   asm volatile (                     \
@@ -49,7 +49,7 @@ void asmAtomicAdd(int* result, int num_one, int num_two);
       :                              \
       :"D"(STR)                      \
       :"%eax", "%ebx"                \
-  );
+  )
 /*----------------------------asmStrlen---------------------------------------*/
 /*----------------------------asmOther----------------------------------------*/
 #define mem_barrier() asm volatile ("":::"memory")
